@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import csv
 
-# Create your views here.
+# Create your views
 
 def home(request):
     return render(request,'testes/home.html')
