@@ -12,10 +12,10 @@
         </thead>
         <tbody>
             {% for row in data %}
-
             <tr>
-                <form action=id="{% url 'config_conexao' %}" method="post">
-                    <td id="{{row.no_dados}}">{{row.no_dados}}</td>
+                <form action="{% url 'config_conexao' %}" method="post">
+                    {% csrf_token %}
+                    <td ><input name="sinan" id="sinan" type="text" value={{row.no_dados}} disabled></td>
                     <td><button style="background-color: #F2EBBF;" class="form-control-sm">Configuração</button>&nbsp;<button style="background-color: #95BEF7;" class="form-control-sm">Teste</button></td>
                     <!--<td><a href="{% url 'config_conexao' %}"><button style="background-color: #F2EBBF;">Configuração</button></a>&nbsp;<button style="background-color: #95BEF7;">Teste</button></td> -->
                     <td></td>
