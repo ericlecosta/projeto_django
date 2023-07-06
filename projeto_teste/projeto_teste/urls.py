@@ -7,5 +7,5 @@ urlpatterns = [
     # rota, view responsavel, nome de referencia
     path('', views.home,name='home'),
     path('testes/', views.conexoes,name='lista_conexao'),
-    path('testes', views.config_con,name='config_conexao')
+    path('testecon/', views.conf_conexao,name='config_conexao')
 ]

@@ -13,5 +13,6 @@ def conexoes(request):
     out = [row for row in reader]
     return render(request,'testes/conexao.html',{'data' : out})
 
-def config_con(request):
+def conf_conexao(request):
+    banco = request.POST.get('')
     return render(request,'testes/config_con.html')
