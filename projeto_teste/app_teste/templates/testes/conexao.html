@@ -1,0 +1,25 @@
+{% extends 'testes/base.html' %}
+{% block conteudo%}
+<div class="container">
+    &nbsp;
+    <table class="table table-striped">
+        <thead>
+            <tr style="background-color: #B4BEC9;">
+                <th scope="col">Base de Dados</th>
+                <th scope="col">Ações</th>
+                <th scope="col">Conexão</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+
+            <tr>
+                <td>{{row.no_dados}}</td>
+                <td><button style="background-color: #F2EBBF;">Configuração</button>&nbsp;<button style="background-color: #95BEF7;">Teste</button></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </div>
+ {% endblock %}
