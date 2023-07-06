@@ -12,3 +12,6 @@ def conexoes(request):
     headers = [col for col in reader.fieldnames]
     out = [row for row in reader]
     return render(request,'testes/conexao.html',{'data' : out})
+
+def config_con(request):
+    return render(request,'testes/config_con.html')

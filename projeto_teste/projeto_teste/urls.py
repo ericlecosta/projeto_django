@@ -6,5 +6,6 @@ from app_teste import views
 urlpatterns = [
     # rota, view responsavel, nome de referencia
     path('', views.home,name='home'),
-    path('testes/', views.conexoes,name='lista_conexao')
+    path('testes/', views.conexoes,name='lista_conexao'),
+    path('testes', views.config_con,name='config_conexao')
 ]
