@@ -17,10 +17,9 @@ def conf_conexao(request):
     csv_fp = open('conexoes.csv', 'r')
     reader = csv.DictReader(csv_fp,delimiter=';')
     out = [row for row in reader]
-    nome_banco = 'teste'
-    #for reg in out:
-        #banco_post = "'" + reg.get("no_dados") + "'"
-        #if  request.POST.get("'" + reg.get("no_dados") + "'") != None:
-            #nome_banco = request.POST.get("'" + reg.get("no_dados") + "'")
-    nome_banco = request.POST.get('sinan')
-    return render(request,'testes/config_con.html',{'banco' : nome_banco})
+    reg_v = {'no_dados': '', 'host': '', 'database': '', 'port': '', 'user': '', 'password': '', 'st_conexao': ''}
+    alt_v = "Teste"
+    for reg in out:
+        if  request.POST.get(reg.get('no_dados')) != None:
+            reg_v = reg
+    return render(request,'testes/config_con.html',{'data' : reg_v, 'st_altera' : alt_v})

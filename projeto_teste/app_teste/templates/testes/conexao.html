@@ -1,13 +1,26 @@
 {% extends 'testes/base.html' %}
 {% block conteudo%}
+
+<style> 
+    input[type=text] {
+      width: 100%;
+      border: 0px;
+      outline: none;
+    }
+    
+    input[type=text]:focus {
+      border: 0px;
+    }
+    </style>
+
 <div class="container">
     &nbsp;
-    <table class="table table-striped">
-        <thead>
-            <tr style="background-color: #B4BEC9;">
-                <th scope="col">Base de Dados</th>
-                <th scope="col">Ações</th>
-                <th scope="col">Conexão</th>
+    <table class="table">
+        <thead class="text-center">
+            <tr style="background-color: #B4BEC9!important;">
+                <th class="col">Base de Dados</th>
+                <th class="col">Ações</th>
+                <th class="col">Conexão</th>
             </tr>
         </thead>
         <tbody>
@@ -15,10 +28,10 @@
             <tr>
                 <form action="{% url 'config_conexao' %}" method="post">
                     {% csrf_token %}
-                    <td ><input name="sinan" id="sinan" type="text" value={{row.no_dados}} disabled></td>
-                    <td><button style="background-color: #F2EBBF;" class="form-control-sm">Configuração</button>&nbsp;<button style="background-color: #95BEF7;" class="form-control-sm">Teste</button></td>
+                    <td class="text-center"><input class="text-center" name="{{row.no_dados}}" type="text" value="{{ row.no_dados }}" readonly></td>
+                    <td class="text-center"><button style="background-color: #F2EBBF;" class="btn">Configuração</button>&nbsp;<button style="background-color: #95BEF7;" class="btn">Teste</button></td>
                     <!--<td><a href="{% url 'config_conexao' %}"><button style="background-color: #F2EBBF;">Configuração</button></a>&nbsp;<button style="background-color: #95BEF7;">Teste</button></td> -->
-                    <td></td>
+                    <td class="text-center">{{ row.st_conexao }}</td>
                 </form>
             </tr>
             {% endfor %}

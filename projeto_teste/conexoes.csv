@@ -1,3 +1,4 @@
-no_dados;host;database;port;user;password
-SINAN;;;;;
-
+no_dados;host;database;port;user;password;st_conexao
+SINAN;10.10.5.106;sinanpop92;5445;postgres;none;Em Teste
+eSUS APS;172.17.135.141;esus;5433;postgres;esus;
+Base de Integracao;172.21.2.65;integracao;5432;postgres;esus;
